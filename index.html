@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+
+<html>
+  <script language='JavaScript'>
+
+    function getwords(){
+    mytopOutput=document.getElementById('topoutput');
+    myleftOutput=document.getElementById('leftoutput');
+    myrightOutput=document.getElementById('rightoutput');
+    toptextbox = document.getElementById('topinput');
+    lefttextbox = document.getElementById('leftinput');
+    righttextbox = document.getElementById('rightinput');
+    
+    if (toptextbox.value != "" || lefttextbox.value != "" || righttextbox.value != ""){
+    mytopOutput.innerHTML=toptextbox.value;
+    myleftOutput.innerHTML=lefttextbox.value;
+    myrightOutput.innerHTML=righttextbox.value;}
+    else
+    alert("No word has been entered!")
+    }
+    
+    </script>
+<style>
+  * {
+    /* outline: solid 1px; */
+    margin:0; padding:0;
+  }
+  .wall{
+    font-family: 'Zhi Mang Xing', cursive;
+  }
+  .head{
+  display: flex;
+  margin:auto;
+    width: 100%;
+    font-size: 100px;
+    padding: 20px 0px;
+    
+    /* justify-content: center; */
+}
+.head > p{
+  margin: auto;
+  background-color: red;
+}
+.low{
+   display: flex; 
+   justify-content: space-between; 
+  font-size: 100px;
+}
+.low .left {
+  writing-mode: vertical-rl;
+  padding: 20px 150px;
+
+}
+.low .right {
+  writing-mode: vertical-rl;
+  padding: 20px 150px;
+  
+}
+.title{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+</style>
+
+<body>
+  <div class="title">
+    <h1>春聯製造機</h1>
+  </div>
+  <div class="wall">
+    上面要甚麼?<input type="text" id="topinput">
+    左邊要甚麼?<input type="text" id="leftinput">
+    右邊要甚麼?<input type="text" id="rightinput">
+    <input type="button" onclick="getwords()" value="Enter" />
+    <!-- <div id="output"></div> -->
+      <div class="head">
+        <p id="topoutput"></p>
+      </div>
+      <div class="low">
+        <div class="left">
+          <p id="leftoutput" style="background-color: red;"></p>
+        </div>
+        <div class="right">
+          <p id="rightoutput" style="background-color: red;"></p>
+        </div>
+      </div>
+  </div>
+  <script src="cool.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+
+
