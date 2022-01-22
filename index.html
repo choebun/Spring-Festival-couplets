@@ -22,6 +22,54 @@
     alert("No word has been entered!")
     }
     
+    var colorWell;
+    window.addEventListener("load", startup, false);
+
+    function startup() {
+    colorWell = document.querySelector("#colorWell");
+    colorback= document.querySelector("#colorback");
+    colorWell.addEventListener("input", updateFirst, false);
+    colorWell.select();
+    colorback.addEventListener("input", updateback, false);
+    colorback.select();
+    }
+    function updateFirst(event) {
+      var top = document.querySelector(".head");
+      var left = document.querySelector(".left");
+      var right = document.querySelector(".right");
+
+      if (top) {
+        top.style.color = event.target.value;
+      }
+      if (left) {
+        left.style.color = event.target.value;
+      }
+      if (right) {
+        right.style.color = event.target.value;
+      }
+    }
+
+    function updateback(event) {
+      var top = document.querySelector(".head p");
+      var left = document.querySelector(".left p");
+      var right = document.querySelector(".right p");
+
+      if (top) {
+        top.style.backgroundColor = event.target.value;
+      }
+      if (left) {
+        left.style.backgroundColor = event.target.value;
+      }
+      if (right) {
+        right.style.backgroundColor = event.target.value;
+      }
+    }
+    
+    // function updateAll(event) {
+    //   document.querySelectorAll(".left").forEach(function(p) {
+    //     p.style.color = event.target.value;
+    //   });}
+
     </script>
 <style>
   * {
@@ -213,6 +261,15 @@
       左邊要甚麼?<input type="text" id="leftinput">
       右邊要甚麼?<input type="text" id="rightinput">
       <input class="btninput" type="button" onclick="getwords()" value="Enter" />
+    </div>
+
+    <div class="colorpicker">
+      <div class="green">
+        文字色彩選取器
+        <input type="color" value="#000000" id="colorWell">
+        春聯色彩選取器
+        <input type="color" value="#ff0000" id="colorback">
+      </div>
     </div>
 
     <div class="wall">
