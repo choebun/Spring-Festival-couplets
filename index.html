@@ -44,6 +44,13 @@
   margin: auto;
   background-color: red;
 }
+.head > p:hover{
+  transform: translateY(-30px);
+  color: #FFD700;
+  border: solid 6px;
+  border-color:black;
+  transition: .7s;
+}
 .low{
    display: flex; 
    justify-content: space-between; 
@@ -59,10 +66,33 @@
   padding: 20px 150px;
   
 }
+.low .right:hover{
+  transform: translateY(-30px);
+  transition: .7s;
+}
+.low .right:hover > p{
+  color: #FFD700;
+  border: solid 6px;
+  border-color:black;
+  transition: .7s;
+}
+.low .left:hover{
+  transform: translateY(-30px);
+  transition: .7s;
+}
+.low .left:hover > p{
+  color: #FFD700;
+  border: solid 6px;
+  border-color:black;
+  transition: .7s;
+}
 .title{
   display: flex;
   justify-content: center;
   padding: 10px;
+}
+.inputsection{
+  padding: 20px;
 }
 </style>
 
@@ -71,10 +101,12 @@
     <h1>春聯製造機</h1>
   </div>
   <div class="wall">
-    上面要甚麼?<input type="text" id="topinput">
-    左邊要甚麼?<input type="text" id="leftinput">
-    右邊要甚麼?<input type="text" id="rightinput">
-    <input type="button" onclick="getwords()" value="Enter" />
+    <div class="inputsection">
+      上面要甚麼?<input type="text" id="topinput">
+      左邊要甚麼?<input type="text" id="leftinput">
+      右邊要甚麼?<input type="text" id="rightinput">
+      <input type="button" onclick="getwords()" value="Enter" />
+    </div>
     <!-- <div id="output"></div> -->
       <div class="head">
         <p id="topoutput"></p>
